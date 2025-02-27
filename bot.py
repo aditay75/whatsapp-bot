@@ -5,6 +5,7 @@ from gtts import gTTS
 from flask import Flask, request
 
 VERIFY_TOKEN = "start"  # Use the same token in Meta Dashboard
+app = Flask(lookmaxxing)
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
@@ -23,7 +24,6 @@ ACCESS_TOKEN = "EAAZAIDDrSZBZBcBOwez7pU7CiUCSmSKWULnZAvjL7u5tJe8jE0V525LZA8jo4U8
 PHONE_NUMBER_ID = "8010127704"
 
 # Flask App
-app = Flask(__name__)
 
 # Face Exercise Instructions
 exercises = {
