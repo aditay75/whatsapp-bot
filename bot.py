@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from flask import Flask, request
-from gtts import gTTSfrom flask import Flask, request
+from gtts import gTTSfrom flask 
 
 VERIFY_TOKEN = "myfacetrainingbot123"  # Use the same token in Meta Dashboard
 
