@@ -1,10 +1,10 @@
 import requests
 import json
 import os
+from gtts import gTTS
 from flask import Flask, request
-from gtts import gTTSfrom flask 
 
-VERIFY_TOKEN = "myfacetrainingbot123"  # Use the same token in Meta Dashboard
+VERIFY_TOKEN = "start"  # Use the same token in Meta Dashboard
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
