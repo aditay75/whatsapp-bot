@@ -1,29 +1,16 @@
 import requests
 import json
 import os
-from gtts import gTTS
 from flask import Flask, request
-
-VERIFY_TOKEN = "start"  # Use the same token in Meta Dashboard
-app = Flask(__name__)
-
-@app.route("/webhook", methods=["GET", "POST"])
-def webhook():
-    if request.method == "GET":
-        if request.args.get("hub.verify_token") == VERIFY_TOKEN:
-            return request.args.get("hub.challenge"), 200
-        return "Verification Failed", 403
-    return "Webhook is live", 200
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
-
+from gtts import gTTS
 
 # WhatsApp API Credentials (Replace with your values)
 ACCESS_TOKEN = "EAAZAIDDrSZBZBcBOwez7pU7CiUCSmSKWULnZAvjL7u5tJe8jE0V525LZA8jo4U80T54GgVrMJm6CCt0eCFJUMASfm7r8fLzZBuD2WA2vjIPoDY7pIE22FZA2BiQvNUGK1DMIbEZBpLZAT3erz3ayWhdDDalsXbgAi1utCiyrwpakttREBjOT02jrQ1sGO3Q9dF15jAL6qB6QffSjFYcQiHsHIczKRZCd0QdwZDZD"
 PHONE_NUMBER_ID = "8010127704"
+VERIFY_TOKEN = "start"
 
 # Flask App
+app = Flask(__name__)
 
 # Face Exercise Instructions
 exercises = {
@@ -88,4 +75,4 @@ def webhook():
 
 # Run Flask App
 if __name__ == "__main__":
-   app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(port=5000, debug=True)
